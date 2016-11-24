@@ -1,0 +1,9 @@
+version: "2"
+services:
+  php:
+    build: .
+    volumes:
+      - .:/var/www/project
+      - ./etc/fpm/pool.d:/etc/php/7.0/fpm/pool.d
+      - ./etc/supervisor:/etc/supervisor
+      - ./etc/fpm/conf.d:/etc/php/7.0/fpm/conf.d

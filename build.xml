@@ -1,0 +1,17 @@
+<project name="TestBuild" default = "build">
+    <fileset dir="." id="index file">
+        <include name="*.test.php"/>
+    </fileset>
+    <target name="copy">
+        <echo message="Echo start copy"/>
+        <copy todir="copy">
+            <fileset refid="index file"/>
+        </copy>
+        <echo message="End copy"/>
+    </target>
+    <target name="build" depends="copy">
+        <echo message="Echo build"/>
+        <copy file="copy/index.php.test.php" tofile="copy/index.php"/>
+        <delete file="copy/index.php.test.php"/>
+    </target>
+</project>
