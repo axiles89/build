@@ -6,4 +6,4 @@
  * Time: 0:41
  */
 
-echo "Release";
+echo "Hello German";
